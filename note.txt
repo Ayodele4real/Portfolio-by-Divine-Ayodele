@@ -1,0 +1,48 @@
+const API_KEY = 'YOUR_API_KEY';
+const DOMAIN = 'YOUR_DOMAIN_NAME';
+
+const formData = require('form-data');
+const Mailgun = require('mailgun.js');
+
+const mailgun = new Mailgun(formData);
+const client = mailgun.client({username: 'api', key: API_KEY});
+
+const messageData = {
+  from: 'Excited User <me@samples.mailgun.org>',
+  to: 'foo@example.com, bar@example.com',
+  subject: 'Hello',
+  text: 'Testing some Mailgun awesomeness!'
+};
+
+client.messages.create(DOMAIN, messageData)
+ .then((res) => {
+   console.log(res);
+ })
+ .catch((err) => {
+   console.error(err);
+ });
+
+
+
+
+
+
+
+ 
+const getJoke = async () => {
+	let rawJoke = await fetch("https://icanhazdadjoke.com/", {
+		method: "GET",
+		headers: {
+			Accept: "application/json",
+		},
+	});
+
+	let result = await rawJoke.json();
+	// console.log(result);
+	return result.joke;
+};
+
+setTimeout(async () => {
+	let Njoke = await getJoke();
+	joke.textContent = Njoke;
+}, 2000);

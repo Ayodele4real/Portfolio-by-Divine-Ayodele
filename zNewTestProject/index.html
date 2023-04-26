@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AY Computers</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>AY Computers</h1>
+    </header>
+    <main>
+        <aside class="main__aside" id="mainAside">
+            <div class="btn__container">
+                <button class="btn" tabindex="0" id="repair" title="Repair">Repair</button>
+            </div>
+            <div class="btn__container">
+                <button class="btn" tabindex="0" id="buy" title="Buy">Buy</button>
+            </div>
+            <div class="btn__container">
+                <button class="btn" tabindex="0" id="sell" title="Sell">Sell</button>
+            </div>
+
+            <div class="btn__container">
+                <button class="btn" tabindex="0" id="contact" title="Contact us">
+                    Contact us
+                </button>
+            </div>
+            <div class="btn__container">
+                <button class="btn" tabindex="0" id="about" title="About">About</button>
+            </div>
+        </aside>
+        <section class="main__section" id="mainSection"></section>
+        <div class="hide">
+            <article class="main__article" id="repairPage">
+                <div class="abs">
+                    <button onclick="close()" class="closeBtn">x</button>
+                </div>
+                <br />
+                <div class="repair-form">
+                    <form>
+                        <input type="text" id="name" placeholder="Your name" autofocus pattern="[a-zA-Z]+" minlength="2"
+                            autocomplete="off" /><br />
+                        <input type="email" id="email" placeholder="yourname@example.com"
+                            pattern="[a-zA-Z]@[a-zA-Z].com" /><br />
+                        <textarea name="decription" id="decription" cols="20" rows="10"></textarea><br>
+                        <label for="file">Upload a screenshot or picture to describe your issue</label>
+                        <input type="file" id="file" onchange="display()" /><br />
+
+                        <div class="img__container">
+                            <img src="" id="image" />
+                        </div>
+                        <input type="submit">
+                        <input type="reset">
+                    </form>
+                </div>
+            </article>
+            <article class="main__article" id="buyPage">
+                <div class="abs">
+                    <button onclick="close()" class="closeBtn">x</button>
+                </div>
+                <br />
+                Buy
+            </article>
+            <article class="main__article" id="sellPage">
+                <div class="abs">
+                    <button onclick="close()" class="closeBtn">x</button>
+                </div>
+                <br />
+                Sell
+            </article>
+            <article class="main__article" id="contactPage">
+                <div class="abs">
+                    <button onclick="close()" class="closeBtn">x</button>
+                </div>
+                <br />
+                Contact
+            </article>
+            <article class="main__article" id="aboutPage">
+                <div class="abs">
+                    <button onclick="close()" class="closeBtn">x</button>
+                </div>
+                <br />
+                About
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>
