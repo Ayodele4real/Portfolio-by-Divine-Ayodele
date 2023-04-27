@@ -1,7 +1,10 @@
+let initSection;
 document.addEventListener("readystatechange", (event) => {
 	if (event.target.readyState == "complete") {
 		console.log("Ready to run app!");
 		initApp();
+		initSection = document.getElementById("mainSection");
+		console.log(initSection);
 	}
 });
 
@@ -14,18 +17,23 @@ const initApp = () => {
 
 	repairBtn.addEventListener("click", () => {
 		renderDisplay(0);
+		setTimeout(closeSection, 1000);
 	});
 	buyBtn.addEventListener("click", () => {
 		renderDisplay(1);
+		setTimeout(closeSection, 1000);
 	});
 	sellBtn.addEventListener("click", () => {
 		renderDisplay(2);
+		setTimeout(closeSection, 1000);
 	});
 	contactBtn.addEventListener("click", () => {
 		renderDisplay(3);
+		setTimeout(closeSection, 1000);
 	});
 	aboutBtn.addEventListener("click", () => {
 		renderDisplay(4);
+		setTimeout(closeSection, 1000);
 	});
 };
 
@@ -40,7 +48,6 @@ const renderDisplay = (n) => {
 	refreshDisplay();
 	let value = articles[n];
 	section.innerHTML = `${value.innerHTML}`;
-	console.log(articles[n]);
 	section.style.display = "flex";
 };
 
@@ -56,3 +63,11 @@ async function display() {
 	};
 	reader.readAsDataURL(file.files[0]);
 }
+
+const closeSection = () => {
+	const closeBtn = document.getElementById("close");
+	closeBtn.addEventListener("click", async () => {
+		const section = document.getElementById("mainSection");
+		section.style.display = "none";
+	});
+};

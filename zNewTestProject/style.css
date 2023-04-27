@@ -202,8 +202,24 @@ main {
 }
 
 .closeBtn {
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 2rem;
+	height: 2rem;
+	padding: 0.1em;
+	background-color: hsla(0, 0%, 50%, 0.474);
+	border: none;
+	font-size: 1.3rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	opacity: 0.6;
+}
+
+.closeBtn:hover {
+	opacity: 1;
+	font-size: calc(1.3rem + 8px);
+	background-color: red;
 }
 
 .img__container {
